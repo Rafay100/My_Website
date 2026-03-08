@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { AlertTriangle } from "lucide-react";
 
 export default function GlobalError({
@@ -25,9 +24,12 @@ export default function GlobalError({
             <p className="text-muted-foreground mb-6">
               We apologize for the inconvenience. Please try again.
             </p>
-            <Button onClick={reset} variant="gradient">
+            <button
+              onClick={reset}
+              className="inline-flex items-center justify-center h-11 px-8 rounded-lg font-medium text-white bg-gradient-to-r from-primary to-secondary shadow-lg hover:shadow-xl transition-all duration-300"
+            >
               Try Again
-            </Button>
+            </button>
           </div>
         </div>
       </body>

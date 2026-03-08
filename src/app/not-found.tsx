@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Home, ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
@@ -13,16 +12,16 @@ export default function NotFound() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/">
-            <Button variant="gradient">
+            <span className="inline-flex items-center justify-center h-11 px-8 rounded-lg font-medium text-white bg-gradient-to-r from-primary to-secondary shadow-lg hover:shadow-xl transition-all duration-300">
               <Home className="w-4 h-4 mr-2" />
               Go Home
-            </Button>
+            </span>
           </Link>
           <Link href="/contact">
-            <Button variant="outline">
+            <span className="inline-flex items-center justify-center h-11 px-8 rounded-lg font-medium border-2 border-input bg-background hover:bg-accent hover:text-accent-foreground transition-all duration-300">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Contact Us
-            </Button>
+            </span>
           </Link>
         </div>
       </div>
