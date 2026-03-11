@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { CaseStudiesSection } from '@/components/sections/case-studies-detailed';
+import { CaseStudiesSection } from "@/components/sections/case-studies-detailed";
 
 export const metadata: Metadata = {
   title: "AI Case Studies | AI Automation Success Stories",

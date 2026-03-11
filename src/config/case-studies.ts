@@ -1,291 +1,176 @@
-import { CaseStudy } from "@/types";
+// src/config/case-studies.ts
+import { CheckCircle, Wrench, Users, Clock, TrendingUp } from "lucide-react";
+
+export type Tool = {
+  name: string;
+  category: string;
+  icon: JSX.Element;
+};
+
+export type Metric = {
+  value: string | number;
+  label: string;
+  description?: string;
+};
+
+export type Testimonial = {
+  quote: string;
+  author: string;
+  role: string;
+  company: string;
+};
+
+export type CaseStudy = {
+  id: string;
+  title: string;
+  subtitle: string;
+  color: string; // Tailwind gradient classes
+  client: {
+    name: string;
+    logo: string; // emoji or short string
+    industry: string;
+    size: string;
+    location: string;
+  };
+  challenge: {
+    title: string;
+    description: string;
+    painPoints: string[];
+  };
+  solution: {
+    title: string;
+    description: string;
+    approach: string[];
+    timeline: string;
+    teamSize: string;
+  };
+  results: {
+    title: string;
+    summary: string;
+    metrics: Metric[];
+    testimonial: Testimonial;
+  };
+  tools: Tool[];
+};
 
 export const caseStudies: CaseStudy[] = [
   {
-    id: "ecommerce-ai-chatbot",
+    id: "1",
     title: "AI Customer Support Chatbot",
-    subtitle: "How we built an AI chatbot that handles 1000+ daily support inquiries with 80% auto-resolution",
+    subtitle: "Automating 80% of customer queries for ShopFlow.",
+    color: "from-primary to-secondary",
     client: {
-      name: "ShopFlow E-commerce",
-      industry: "E-commerce",
-      size: "100-250 employees",
-      location: "Los Angeles, CA",
+      name: "ShopFlow",
       logo: "🛍️",
+      industry: "E-commerce",
+      size: "50-200 employees",
+      location: "USA",
     },
     challenge: {
-      title: "The Challenge",
-      description: "ShopFlow was overwhelmed with 1000+ daily customer support tickets about order status, returns, product questions, and troubleshooting. Their small support team couldn't keep up, leading to slow response times, frustrated customers, and lost repeat purchases.",
+      title: "High Support Costs & Slow Response",
+      description: "Manual support was slow and expensive, impacting customer satisfaction.",
       painPoints: [
-        "Average response time of 12+ hours for support tickets",
-        "Support team overwhelmed with repetitive questions",
-        "No 24/7 support coverage for international customers",
-        "High support costs eating into profit margins",
-        "Customer satisfaction dropping due to slow responses",
-        "Support agents burning out from repetitive work",
+        "Long response times",
+        "High support costs",
+        "Customer dissatisfaction",
       ],
     },
     solution: {
-      title: "Our Solution",
-      description: "We built a custom AI chatbot powered by RAG (Retrieval-Augmented Generation) that understands their product catalog, order system, and support documentation. The chatbot integrates with their e-commerce platform to provide real-time order updates and handles complex multi-turn conversations.",
+      title: "AI Chatbot Implementation",
+      description:
+        "Implemented an AI-powered chatbot integrated with CRM for automated responses and routing.",
       approach: [
-        "Analyzed 6 months of support tickets to identify common queries",
-        "Built RAG pipeline with product catalog and documentation",
-        "Integrated with Shopify API for real-time order data",
-        "Implemented multi-turn conversation memory",
-        "Created seamless handoff to human agents for complex issues",
-        "Deployed on website, WhatsApp, and Facebook Messenger",
+        "Integrated AI chatbot with CRM",
+        "Automated FAQ handling",
+        "Escalation rules for complex queries",
       ],
-      timeline: "6 weeks from kickoff to full deployment",
-      teamSize: "3-person AI development team",
+      timeline: "3 months",
+      teamSize: "4 members",
     },
-    tools: [
-      { name: "OpenAI GPT-4", category: "AI Model", icon: "🤖" },
-      { name: "LangChain", category: "AI Framework", icon: "⛓️" },
-      { name: "Pinecone", category: "Vector DB", icon: "🌲" },
-      { name: "Next.js", category: "Framework", icon: "⚡" },
-      { name: "Shopify API", category: "E-commerce", icon: "🛒" },
-      { name: "Vercel", category: "Hosting", icon: "▲" },
-    ],
     results: {
-      title: "The Results",
-      summary: "Within 3 months of deployment, the AI chatbot transformed their customer support operations.",
+      title: "Results & Impact",
+      summary: "Significant improvement in efficiency and customer satisfaction.",
       metrics: [
-        { value: "80%", label: "Auto-Resolution Rate", description: "Tickets resolved without human intervention" },
-        { value: "<1min", label: "Average Response Time", description: "Down from 12 hours" },
-        { value: "10K+", label: "Monthly Conversations", description: "Handled by AI chatbot" },
-        { value: "65%", label: "Reduction in Support Costs", description: "Lower operational expenses" },
-        { value: "92%", label: "Customer Satisfaction", description: "Up from 68%" },
-        { value: "24/7", label: "Support Coverage", description: "Now available round the clock" },
+        { value: "80%", label: "Auto-Resolution Rate" },
+        { value: "10K+", label: "Monthly Conversations" },
+        { value: "50%", label: "Support Cost Reduction" },
       ],
       testimonial: {
-        quote: "The AI chatbot they built transformed our customer support. We reduced response times from hours to seconds and our customers love it. Best investment we made this year.",
-        author: "Sarah Chen",
-        role: "CEO",
+        quote: "The AI chatbot transformed our support operations.",
+        author: "Jane Doe",
+        role: "Customer Support Manager",
         company: "ShopFlow",
       },
     },
-    featured: true,
-    color: "from-violet-500 to-purple-600",
+    tools: [
+      { name: "Qwen AI", category: "AI Engine", icon: <Checkcirl /> },
+      { name: "React", category: "Frontend", icon: <Wrench /> },
+      { name: "Figma", category: "Design", icon: <Users /> },
+      { name: "Clockify", category: "Project Tracking", icon: <Clock /> },
+      { name: "Google Analytics", category: "Analytics", icon: <TrendingUp /> },
+    ],
   },
+
+  // You can add more case studies below
   {
-    id: "saas-lead-gen-chatbot",
+    id: "2",
     title: "AI Lead Generation Chatbot",
-    subtitle: "How an AI chatbot increased qualified leads by 3x and booking rates by 45%",
+    subtitle: "3x more qualified leads for CloudMetrics.",
+    color: "from-green-400 to-blue-500",
     client: {
-      name: "CloudMetrics SaaS",
-      industry: "B2B SaaS",
-      size: "25-50 employees",
-      location: "San Francisco, CA",
-      logo: "📊",
+      name: "CloudMetrics",
+      logo: "☁️",
+      industry: "SaaS",
+      size: "100-500 employees",
+      location: "UK",
     },
     challenge: {
-      title: "The Challenge",
-      description: "CloudMetrics had great product-market fit but was struggling to convert website visitors into qualified leads. Their manual lead qualification process was slow, and they were missing opportunities from visitors outside business hours.",
+      title: "Low Lead Conversion",
+      description: "Manual outreach had low conversion rates and wasted sales time.",
       painPoints: [
-        "Website visitors leaving without taking action",
-        "No lead qualification happening 24/7",
-        "Sales team spending hours on unqualified leads",
-        "Average lead response time of 24+ hours",
-        "Low meeting booking rate from inbound leads",
-        "No integration between website and CRM",
+        "Low lead quality",
+        "Time-consuming outreach",
+        "Missed opportunities",
       ],
     },
     solution: {
-      title: "Our Solution",
-      description: "We developed an AI chatbot that engages visitors with personalized conversations, asks qualifying questions based on BANT framework, schedules demos directly on their calendar, and syncs all data to HubSpot CRM.",
+      title: "Automated AI Lead Bot",
+      description:
+        "AI chatbot interacts with prospects, qualifies leads, and books meetings automatically.",
       approach: [
-        "Designed conversational flow for lead qualification",
-        "Integrated with HubSpot for real-time lead sync",
-        "Connected Calendly for instant demo scheduling",
-        "Implemented lead scoring based on conversation quality",
-        "Built custom dashboard for sales team visibility",
-        "Created automated follow-up sequences for warm leads",
+        "Integrated lead capture with website",
+        "AI qualification logic",
+        "Meeting scheduling automation",
       ],
-      timeline: "4 weeks from kickoff to launch",
-      teamSize: "2-person AI development team",
+      timeline: "2 months",
+      teamSize: "3 members",
     },
-    tools: [
-      { name: "OpenAI GPT-4", category: "AI Model", icon: "🤖" },
-      { name: "HubSpot API", category: "CRM", icon: "🎯" },
-      { name: "Calendly", category: "Scheduling", icon: "📅" },
-      { name: "Next.js", category: "Framework", icon: "⚡" },
-      { name: "Vercel AI SDK", category: "AI SDK", icon: "▲" },
-      { name: "Zapier", category: "Automation", icon: "⚡" },
-    ],
     results: {
-      title: "The Results",
-      summary: "The AI lead generation chatbot delivered exceptional results within the first quarter.",
+      title: "Results & Impact",
+      summary: "Higher conversion rates and more booked meetings.",
       metrics: [
-        { value: "3x", label: "More Qualified Leads", description: "Increase in SQLs" },
-        { value: "45%", label: "Meeting Booking Rate", description: "Of engaged visitors" },
-        { value: "24/7", label: "Lead Capture", description: "Never miss an opportunity" },
-        { value: "85%", label: "Reduction in Response Time", description: "Instant engagement" },
-        { value: "60%", label: "Time Saved for Sales", description: "No manual qualification" },
-        { value: "40%", label: "Increase in Revenue", description: "Attributed to chatbot" },
+        { value: "3x", label: "Qualified Leads" },
+        { value: "45%", label: "Meeting Booking Rate" },
+        { value: "25%", label: "Conversion Increase" },
       ],
       testimonial: {
-        quote: "The ROI was immediate. Our lead qualification process is now fully automated and we're booking 3x more meetings. The AI chatbot pays for itself every month.",
-        author: "James Wilson",
-        role: "VP of Sales",
+        quote: "AI lead bot doubled our pipeline in 2 months.",
+        author: "John Smith",
+        role: "Head of Sales",
         company: "CloudMetrics",
       },
     },
-    featured: true,
-    color: "from-cyan-500 to-blue-600",
-  },
-  {
-    id: "fintech-ai-website",
-    title: "AI Startup Website with Chatbot",
-    subtitle: "Building a complete AI-powered website with integrated chatbot for a fintech startup",
-    client: {
-      name: "PayFlow AI",
-      industry: "Fintech",
-      size: "10-25 employees",
-      location: "New York, NY",
-      logo: "💳",
-    },
-    challenge: {
-      title: "The Challenge",
-      description: "PayFlow AI needed a modern website that would establish credibility, explain their complex financial products, and capture leads. They wanted an integrated AI assistant to educate visitors and qualify interest.",
-      painPoints: [
-        "No online presence to showcase their product",
-        "Complex product requiring explanation",
-        "Manual lead capture through contact forms",
-        "No way to engage visitors in real-time",
-        "Limited marketing budget for content creation",
-        "Needed to launch quickly for investor demo",
-      ],
-    },
-    solution: {
-      title: "Our Solution",
-      description: "We designed and developed a complete AI-powered website with an integrated chatbot that explains products, answers questions, and captures user interest. Built with Next.js for optimal performance and SEO.",
-      approach: [
-        "Created modern, conversion-focused website design",
-        "Built AI chatbot trained on their product documentation",
-        "Implemented interactive product demos and calculators",
-        "Integrated lead capture with email notifications",
-        "Optimized for SEO with AI-generated content",
-        "Deployed on Vercel with CI/CD pipeline",
-      ],
-      timeline: "5 weeks from design to launch",
-      teamSize: "4-person team (design, dev, AI)",
-    },
     tools: [
-      { name: "Next.js 14", category: "Framework", icon: "⚡" },
-      { name: "Tailwind CSS", category: "Styling", icon: "🎨" },
-      { name: "Vercel AI SDK", category: "AI SDK", icon: "▲" },
-      { name: "OpenAI", category: "AI Model", icon: "🤖" },
-      { name: "Framer Motion", category: "Animation", icon: "✨" },
-      { name: "Stripe", category: "Payments", icon: "💳" },
+      { name: "Qwen AI", category: "AI Engine", icon: <CheckCircle /> },
+      { name: "Next.js", category: "Frontend", icon: <Wrench /> },
+      { name: "HubSpot", category: "CRM", icon: <Users /> },
     ],
-    results: {
-      title: "The Results",
-      summary: "The new AI-powered website became their best sales tool.",
-      metrics: [
-        { value: "95+", label: "PageSpeed Score", description: "Lightning fast performance" },
-        { value: "2.5x", label: "Conversion Increase", description: "Vs. previous landing page" },
-        { value: "40%", label: "Chatbot Engagement", description: "Of visitors interact" },
-        { value: "Top 3", label: "Google Rankings", description: "For target keywords" },
-        { value: "3 weeks", label: "Time to Launch", description: "Rapid deployment" },
-        { value: "$500K", label: "Pipeline Generated", description: "In first 3 months" },
-      ],
-      testimonial: {
-        quote: "From idea to launch in just 4 weeks. The AI website they built ranks on Google and the chatbot generates qualified leads daily. Our investors were impressed.",
-        author: "Lisa Thompson",
-        role: "Marketing Director",
-        company: "PayFlow AI",
-      },
-    },
-    featured: false,
-    color: "from-emerald-500 to-teal-600",
-  },
-  {
-    id: "enterprise-ai-agent",
-    title: "AI Research Agent for Enterprise",
-    subtitle: "Building an autonomous AI agent that automates market research and competitive analysis",
-    client: {
-      name: "Strategy Corp",
-      industry: "Management Consulting",
-      size: "250-500 employees",
-      location: "Chicago, IL",
-      logo: "📈",
-    },
-    challenge: {
-      title: "The Challenge",
-      description: "Strategy Corp's consultants were spending 20+ hours per week on manual market research, competitor analysis, and data gathering. This repetitive work was preventing them from focusing on high-value strategic thinking.",
-      painPoints: [
-        "Consultants spending 50% of time on research admin",
-        "Manual data collection from multiple sources",
-        "Inconsistent research quality across team members",
-        "Slow turnaround for client deliverables",
-        "High labor costs for routine research tasks",
-        "Difficulty scaling research capacity for large projects",
-      ],
-    },
-    solution: {
-      title: "Our Solution",
-      description: "We built an autonomous AI research agent that independently gathers market data, analyzes competitors, synthesizes findings, and generates structured reports. The agent integrates with their knowledge base and delivers research directly to consultants.",
-      approach: [
-        "Designed multi-agent architecture for research workflow",
-        "Integrated with news APIs, company databases, and web search",
-        "Built automated report generation with citations",
-        "Implemented human-in-the-loop review workflow",
-        "Created custom dashboard for research management",
-        "Deployed secure infrastructure with data encryption",
-      ],
-      timeline: "10 weeks from kickoff to deployment",
-      teamSize: "5-person AI engineering team",
-    },
-    tools: [
-      { name: "OpenAI GPT-4", category: "AI Model", icon: "🤖" },
-      { name: "LangChain Agents", category: "AI Framework", icon: "⛓️" },
-      { name: "Serper API", category: "Search", icon: "🔍" },
-      { name: "Python", category: "Backend", icon: "🐍" },
-      { name: "PostgreSQL", category: "Database", icon: "🗄️" },
-      { name: "AWS", category: "Cloud", icon: "☁️" },
-    ],
-    results: {
-      title: "The Results",
-      summary: "The AI research agent transformed how Strategy Corp delivers insights to clients.",
-      metrics: [
-        { value: "80%", label: "Time Saved on Research", description: "Per consultant per week" },
-        { value: "5x", label: "Research Capacity", description: "Handle more projects" },
-        { value: "60%", label: "Faster Turnaround", description: "Deliver to clients quicker" },
-        { value: "95%", label: "Accuracy Rate", description: "Verified by senior consultants" },
-        { value: "$2M", label: "Annual Cost Savings", description: "Reduced research labor" },
-        { value: "40%", label: "Revenue Increase", description: "More projects delivered" },
-      ],
-      testimonial: {
-        quote: "The AI automation saved us 50+ hours per week per consultant. The team is now focused on high-value strategic work instead of repetitive research. Absolutely game-changing.",
-        author: "Emily Watson",
-        role: "COO",
-        company: "Strategy Corp",
-      },
-    },
-    featured: false,
-    color: "from-orange-500 to-red-600",
   },
 ];
 
 export const caseStudyCategories = [
-  {
-    name: "All",
-    filter: () => true,
-  },
-  {
-    name: "AI Chatbots",
-    filter: (cs: CaseStudy) => cs.title.toLowerCase().includes("chatbot"),
-  },
-  {
-    name: "AI Agents",
-    filter: (cs: CaseStudy) => cs.title.toLowerCase().includes("agent"),
-  },
-  {
-    name: "AI Websites",
-    filter: (cs: CaseStudy) => cs.title.toLowerCase().includes("website"),
-  },
-  {
-    name: "Landing Pages",
-    filter: (cs: CaseStudy) => cs.title.toLowerCase().includes("landing"),
-  },
+  { name: "All", filter: (cs: CaseStudy) => true },
+  { name: "AI Chatbots", filter: (cs: CaseStudy) => cs.title.includes("Chatbot") },
+  { name: "AI Agents", filter: (cs: CaseStudy) => cs.title.includes("Agent") },
+  { name: "AI Websites", filter: (cs: CaseStudy) => cs.title.includes("Website") },
 ];
