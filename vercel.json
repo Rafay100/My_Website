@@ -3,7 +3,7 @@
   "regions": ["iad1"],
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "installCommand": "npm install",
+  "installCommand": "npm ci --legacy-peer-deps",
   "outputDirectory": ".next",
   "env": {
     "NEXT_PUBLIC_APP_URL": "https://my-portfolio-chi-lovat-69.vercel.app"
