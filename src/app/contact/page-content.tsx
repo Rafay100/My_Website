@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 import {
   Mail,
   Phone,
@@ -21,8 +21,8 @@ import {
   Globe,
   Sparkles,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
+import { Button } from '@/components/ui/button';
+import { siteConfig } from '@/config/site';
 
 const contactInfo = [
   {
