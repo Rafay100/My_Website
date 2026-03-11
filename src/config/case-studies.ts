@@ -1,10 +1,9 @@
 // src/config/case-studies.ts
-import { CheckCircle, Wrench, Users, Clock, TrendingUp } from "lucide-react";
 
 export type Tool = {
   name: string;
   category: string;
-  icon: JSX.Element;
+  icon: string;
 };
 
 export type Metric = {
@@ -103,11 +102,11 @@ export const caseStudies: CaseStudy[] = [
       },
     },
     tools: [
-      { name: "Qwen AI", category: "AI Engine", icon: <Checkcirl /> },
-      { name: "React", category: "Frontend", icon: <Wrench /> },
-      { name: "Figma", category: "Design", icon: <Users /> },
-      { name: "Clockify", category: "Project Tracking", icon: <Clock /> },
-      { name: "Google Analytics", category: "Analytics", icon: <TrendingUp /> },
+      { name: "OpenAI", category: "AI Engine", icon: "🤖" },
+      { name: "React", category: "Frontend", icon: "⚛️" },
+      { name: "Figma", category: "Design", icon: "🎨" },
+      { name: "Clockify", category: "Project Tracking", icon: "⏱️" },
+      { name: "Google Analytics", category: "Analytics", icon: "📊" },
     ],
   },
 
@@ -161,9 +160,9 @@ export const caseStudies: CaseStudy[] = [
       },
     },
     tools: [
-      { name: "Qwen AI", category: "AI Engine", icon: <CheckCircle /> },
-      { name: "Next.js", category: "Frontend", icon: <Wrench /> },
-      { name: "HubSpot", category: "CRM", icon: <Users /> },
+      { name: "OpenAI", category: "AI Engine", icon: "🤖" },
+      { name: "Next.js", category: "Frontend", icon: "▲" },
+      { name: "HubSpot", category: "CRM", icon: "🎯" },
     ],
   },
 ];
