@@ -51,7 +51,7 @@ const structuredData = {
   provider: {
     "@type": "Organization",
     name: "Syed Rafay",
-    url: "https://my-portfolio-chi-lovat-69.vercel.app",
+    url: "https://my-new-portfolio-gamma-two.vercel.app",
   },
   areaServed: {
     "@type": "Country",

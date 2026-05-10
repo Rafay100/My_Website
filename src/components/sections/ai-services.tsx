@@ -111,7 +111,7 @@ export function AIServicesSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto"
       >
         {aiServices.map((service, index) => {
           const Icon = service.icon;
@@ -119,41 +119,41 @@ export function AIServicesSection() {
             <motion.div
               key={index}
               variants={cardVariants}
-              whileHover={{ y: -8 }}
+              whileHover={{ y: -6 }}
               transition={{ duration: 0.3 }}
             >
-              <Card className="group h-full overflow-hidden border-0 bg-card shadow-lg hover:shadow-2xl transition-all duration-500">
+              <Card className="group h-full overflow-hidden border border-border/50 bg-card shadow-md hover:shadow-xl hover:border-primary/30 transition-all duration-500">
                 {/* Gradient Header */}
-                <div className={`h-2 bg-gradient-to-r ${service.gradient}`} />
+                <div className={`h-1.5 bg-gradient-to-r ${service.gradient}`} />
 
-                <CardContent className="p-8">
+                <CardContent className="p-5">
                   {/* Icon */}
                   <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 shadow-lg`}
+                    whileHover={{ scale: 1.05, rotate: 3 }}
+                    className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 shadow-md`}
                   >
-                    <Icon className="w-8 h-8 text-white" />
+                    <Icon className="w-6 h-6 text-white" />
                   </motion.div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">
                     {service.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                  <p className="text-xs text-muted-foreground mb-4 leading-relaxed line-clamp-3">
                     {service.description}
                   </p>
 
                   {/* Features */}
-                  <ul className="space-y-3 mb-8">
-                    {service.features.map((feature, i) => (
+                  <ul className="space-y-2 mb-5">
+                    {service.features.slice(0, 4).map((feature, i) => (
                       <li
                         key={i}
-                        className="flex items-center text-sm text-muted-foreground"
+                        className="flex items-start text-xs text-muted-foreground"
                       >
-                        <CheckCircle className="w-4 h-4 text-accent mr-3 flex-shrink-0" />
-                        {feature}
+                        <CheckCircle className="w-3 h-3 text-accent mr-2 flex-shrink-0 mt-0.5" />
+                        <span className="line-clamp-1">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -161,11 +161,10 @@ export function AIServicesSection() {
                   {/* CTA Button */}
                   <Button
                     variant="outline"
-                    className="w-full group/btn"
-                    size="lg"
+                    className="w-full group/btn text-xs h-9"
                   >
                     {service.cta}
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3 h-3 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
                 </CardContent>
               </Card>

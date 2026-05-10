@@ -3,8 +3,8 @@ import { NavItem, Integration, Testimonial, Stat, FAQ } from "@/types";
 export const siteConfig = {
   name: "Syed Rafay",
   description: "AI Automation Developer | AI Chatbot Development, AI Agents & AI Websites",
-  url: "https://my-portfolio-chi-lovat-69.vercel.app",
-  portfolioUrl: "https://my-portfolio-chi-lovat-69.vercel.app",
+  url: "https://my-new-portfolio-gamma-two.vercel.app",
+  portfolioUrl: "https://my-new-portfolio-gamma-two.vercel.app",
   keywords: [
     "AI chatbot development",
     "AI agent automation",
@@ -21,7 +21,7 @@ export const siteConfig = {
     twitter: "https://twitter.com",
     github: "https://github.com",
     linkedin: "https://linkedin.com",
-    portfolio: "https://my-portfolio-chi-lovat-69.vercel.app",
+    portfolio: "https://my-new-portfolio-gamma-two.vercel.app",
   },
   contact: {
     email: "srafay2021@gmail.com",

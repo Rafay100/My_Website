@@ -139,61 +139,62 @@ export function AISolutionsSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto"
       >
         {aiSolutions.map((solution, index) => {
           const Icon = solution.icon;
           return (
             <motion.div key={index} variants={cardVariants}>
-              <Card className="group h-full overflow-hidden border-0 bg-card shadow-xl hover:shadow-2xl transition-all duration-500">
+              <Card className="group h-full overflow-hidden border border-border/50 bg-card shadow-md hover:shadow-xl hover:border-primary/30 transition-all duration-500">
                 {/* Gradient Header */}
-                <div className={`h-2 bg-gradient-to-r ${solution.gradient}`} />
+                <div className={`h-1.5 bg-gradient-to-r ${solution.gradient}`} />
 
-                <CardContent className="p-8">
-                  {/* Icon */}
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${solution.gradient} flex items-center justify-center mb-6 shadow-lg`}
-                  >
-                    <Icon className="w-8 h-8 text-white" />
-                  </motion.div>
+                <CardContent className="p-6">
+                  {/* Icon & Title Row */}
+                  <div className="flex items-start gap-4 mb-4">
+                    <motion.div
+                      whileHover={{ scale: 1.05, rotate: 3 }}
+                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${solution.gradient} flex items-center justify-center shadow-md flex-shrink-0`}
+                    >
+                      <Icon className="w-6 h-6 text-white" />
+                    </motion.div>
 
-                  {/* Title */}
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
-                    {solution.title}
-                  </h3>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold mb-1.5 group-hover:text-primary transition-colors">
+                        {solution.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {solution.shortDescription}
+                      </p>
+                    </div>
+                  </div>
 
-                  {/* Description */}
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {solution.shortDescription}
-                  </p>
-
-                  {/* Features */}
-                  <ul className="space-y-3 mb-8">
+                  {/* Features Grid */}
+                  <div className="grid grid-cols-2 gap-2 mb-5">
                     {solution.features.map((feature, i) => {
                       const FeatureIcon = feature.icon;
                       return (
-                        <li
+                        <div
                           key={i}
-                          className="flex items-center text-sm text-muted-foreground"
+                          className="flex items-center gap-2 text-xs text-muted-foreground bg-muted/50 rounded-lg px-3 py-2"
                         >
-                          <FeatureIcon className="w-4 h-4 text-accent mr-3 flex-shrink-0" />
-                          {feature.text}
-                        </li>
+                          <FeatureIcon className="w-3.5 h-3.5 text-primary flex-shrink-0" />
+                          <span className="truncate">{feature.text}</span>
+                        </div>
                       );
                     })}
-                  </ul>
+                  </div>
 
-                  {/* Benefits Box */}
-                  <div className="bg-muted/50 rounded-xl p-5 mb-8">
-                    <h4 className="font-semibold mb-3 text-sm uppercase tracking-wide text-muted-foreground">
+                  {/* Benefits Compact */}
+                  <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg p-4 mb-5 border border-primary/10">
+                    <h4 className="font-semibold mb-2.5 text-xs uppercase tracking-wide text-primary">
                       Key Benefits
                     </h4>
-                    <ul className="space-y-2">
+                    <ul className="space-y-1.5">
                       {solution.benefits.map((benefit, i) => (
                         <li key={i} className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-foreground">{benefit}</span>
+                          <CheckCircle className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-0.5" />
+                          <span className="text-xs text-foreground/90">{benefit}</span>
                         </li>
                       ))}
                     </ul>
@@ -202,11 +203,11 @@ export function AISolutionsSection() {
                   {/* CTA Button */}
                   <Button
                     variant="gradient"
-                    size="lg"
+                    size="default"
                     className="w-full group/btn"
                   >
                     {solution.cta}
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
                 </CardContent>
               </Card>

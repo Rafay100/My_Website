@@ -4,7 +4,7 @@
 
 Your portfolio link and name have been added throughout the website:
 
-- ✅ **Portfolio URL**: https://my-portfolio-chi-lovat-69.vercel.app
+- ✅ **Portfolio URL**: https://my-new-portfolio-gamma-two.vercel.app/
 - ✅ **Name**: Syed Rafay
 - ✅ **Logo**: Changed from "C" to "S" for Syed
 
@@ -18,14 +18,14 @@ Open `src/config/site.ts` and update these fields with your actual information:
 export const siteConfig = {
   name: "Syed Rafay",
   description: "Transform Your CRM Into a Revenue Engine | AI Solutions Expert",
-  url: "https://my-portfolio-chi-lovat-69.vercel.app",
-  portfolioUrl: "https://my-portfolio-chi-lovat-69.vercel.app",
+  url: "https://my-new-portfolio-gamma-two.vercel.app",
+  portfolioUrl: "https://my-new-portfolio-gamma-two.vercel.app",
   keywords: ["CRM consulting", "CRM automation", "Startup CRM setup", "AI chatbot development", "AI website development"],
   links: {
     twitter: "https://twitter.com/yourusername",      // TODO: Update
     github: "https://github.com/yourusername",        // TODO: Update
     linkedin: "https://linkedin.com/in/yourusername", // TODO: Update
-    portfolio: "https://my-portfolio-chi-lovat-69.vercel.app",
+    portfolio: "https://my-new-portfolio-gamma-two.vercel.app",
   },
   contact: {
     email: "your.email@example.com",    // TODO: Update with your email
@@ -93,7 +93,7 @@ links: {
   twitter: "https://twitter.com/syedrafay",
   github: "https://github.com/syedrafay",
   linkedin: "https://linkedin.com/in/syedrafay",
-  portfolio: "https://my-portfolio-chi-lovat-69.vercel.app",
+  portfolio: "https://my-new-portfolio-gamma-two.vercel.app",
 }
 ```
 

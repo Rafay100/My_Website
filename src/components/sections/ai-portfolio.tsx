@@ -12,6 +12,8 @@ import {
   CheckCircle,
   Clock,
   Code,
+  Github,
+  ExternalLink,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -28,67 +30,114 @@ const Database = ({ className }: { className?: string }) => (
 
 const sampleProjects = [
   {
-    title: "AI Customer Support Chatbot",
-    slug: "customer-support-chatbot",
-    description: "Intelligent chatbot that handles customer inquiries 24/7, reducing support tickets by up to 80%.",
+    title: "AI Customer Support Agent",
+    slug: "ai-customer-support-agent",
+    description: "Intelligent AI agent that handles customer inquiries 24/7, reducing support tickets by up to 80%.",
     features: [
       "Instant responses to common questions",
       "Seamless handoff to human agents",
-      "Integration with your helpdesk system",
+      "Integration with helpdesk systems",
       "Multi-language support",
     ],
     technologies: [
-      { name: "ChatGPT API", icon: Brain },
-      { name: "Next.js", icon: Globe },
-      { name: "Node.js", icon: Zap },
-      { name: "MongoDB", icon: Database },
+      { name: "OpenAI GPT-4", icon: Brain },
+      { name: "LangChain", icon: Code },
+      { name: "Python", icon: Zap },
+      { name: "FastAPI", icon: Globe },
     ],
-    category: "Chatbot",
+    category: "AI Agent",
     gradient: "from-emerald-500 to-teal-600",
     icon: MessageSquare,
-    deliverables: ["Custom AI chatbot", "Admin dashboard", "Analytics panel", "30 days support"],
+    deliverables: ["Custom AI agent", "Admin dashboard", "Analytics panel", "30 days support"],
+    githubUrl: "https://github.com/Rafay100/Ai_Customer_Support_Agent",
   },
   {
-    title: "AI Lead Generation Chatbot",
-    slug: "lead-generation-chatbot",
-    description: "Convert website visitors into qualified leads with an AI chatbot that works 24/7.",
+    title: "AI Agentic Automation",
+    slug: "ai-agentic-automation",
+    description: "Advanced AI automation system with autonomous agents that handle complex workflows and tasks.",
     features: [
-      "Engage visitors with smart questions",
-      "Auto-schedule meetings to your calendar",
-      "Sync leads to your CRM automatically",
-      "Qualify leads based on your criteria",
+      "Multi-agent orchestration",
+      "Automated workflow execution",
+      "Task delegation and monitoring",
+      "Real-time decision making",
+    ],
+    technologies: [
+      { name: "LangChain", icon: Brain },
+      { name: "CrewAI", icon: Zap },
+      { name: "Python", icon: Code },
+      { name: "Redis", icon: Database },
+    ],
+    category: "Automation",
+    gradient: "from-violet-500 to-purple-600",
+    icon: Brain,
+    deliverables: ["Agent framework", "Workflow automation", "Monitoring dashboard", "Documentation"],
+    githubUrl: "https://github.com/Rafay100/ai-agentic-automation",
+  },
+  {
+    title: "AI Excel Agent",
+    slug: "ai-excel-agent",
+    description: "Smart AI agent that automates Excel tasks, data analysis, and report generation with natural language.",
+    features: [
+      "Natural language Excel commands",
+      "Automated data analysis",
+      "Report generation",
+      "Formula suggestions and debugging",
     ],
     technologies: [
       { name: "OpenAI GPT-4", icon: Brain },
-      { name: "HubSpot API", icon: Zap },
-      { name: "React", icon: Globe },
-      { name: "Calendly", icon: Clock },
+      { name: "Pandas", icon: Database },
+      { name: "Python", icon: Code },
+      { name: "Streamlit", icon: Globe },
     ],
-    category: "Lead Generation",
-    gradient: "from-violet-500 to-purple-600",
-    icon: ShoppingCart,
-    deliverables: ["Lead qualification bot", "CRM integration", "Calendar booking", "Lead scoring system"],
+    category: "Data Automation",
+    gradient: "from-cyan-500 to-blue-600",
+    icon: Database,
+    deliverables: ["Excel automation tool", "Data analysis features", "Report templates", "User guide"],
+    githubUrl: "https://github.com/Rafay100/Ai_Excel_Agent",
   },
   {
-    title: "AI-Powered Business Website",
-    slug: "startup-website-chatbot",
-    description: "Modern, fast website with built-in AI assistant to engage visitors and capture leads.",
+    title: "AI Calling Agent",
+    slug: "ai-calling-agent",
+    description: "Voice-enabled AI agent that handles phone calls, schedules appointments, and qualifies leads automatically.",
     features: [
-      "Beautiful, responsive design",
-      "SEO optimized for Google ranking",
-      "Built-in AI chatbot for engagement",
-      "Lightning fast performance",
+      "Natural voice conversations",
+      "Appointment scheduling",
+      "Lead qualification",
+      "Call transcription and analysis",
     ],
     technologies: [
-      { name: "Next.js 14", icon: Globe },
-      { name: "Tailwind CSS", icon: Zap },
-      { name: "Vercel AI SDK", icon: Brain },
-      { name: "Stripe", icon: Zap },
+      { name: "OpenAI Whisper", icon: Brain },
+      { name: "ElevenLabs", icon: Zap },
+      { name: "Twilio", icon: Globe },
+      { name: "Python", icon: Code },
     ],
-    category: "Website + Chatbot",
-    gradient: "from-cyan-500 to-blue-600",
-    icon: Building,
-    deliverables: ["Complete website", "AI chatbot integration", "SEO optimization", "Hosting setup"],
+    category: "Voice AI",
+    gradient: "from-orange-500 to-red-600",
+    icon: MessageSquare,
+    deliverables: ["Voice AI system", "Call routing", "Analytics dashboard", "Integration support"],
+    githubUrl: "https://github.com/Rafay100/Ai_Calling_Agent",
+  },
+  {
+    title: "AI Ad Agency",
+    slug: "ai-ad-agency",
+    description: "AI-powered advertising platform that generates ad copy, designs, and optimizes campaigns automatically.",
+    features: [
+      "AI-generated ad copy",
+      "Automated A/B testing",
+      "Campaign optimization",
+      "Performance analytics",
+    ],
+    technologies: [
+      { name: "OpenAI GPT-4", icon: Brain },
+      { name: "DALL-E", icon: Zap },
+      { name: "Next.js", icon: Globe },
+      { name: "PostgreSQL", icon: Database },
+    ],
+    category: "Marketing AI",
+    gradient: "from-pink-500 to-rose-600",
+    icon: ShoppingCart,
+    deliverables: ["Ad generation tool", "Campaign manager", "Analytics suite", "API access"],
+    githubUrl: "https://github.com/Rafay100/ad_agency",
   },
 ];
 
@@ -220,11 +269,24 @@ export function AIPortfolioSection() {
                     </div>
                   </div>
 
-                  {/* CTA Button */}
-                  <Button variant="outline" className="w-full group/btn">
-                    Request This Solution
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                  </Button>
+                  {/* CTA Buttons */}
+                  <div className="flex gap-3">
+                    <Button
+                      variant="outline"
+                      className="flex-1 group/btn"
+                      asChild
+                    >
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-2" />
+                        View Code
+                        <ExternalLink className="w-3 h-3 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                      </a>
+                    </Button>
+                    <Button variant="default" className="flex-1 group/btn">
+                      Request This
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>

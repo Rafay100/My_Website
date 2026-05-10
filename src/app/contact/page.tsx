@@ -36,7 +36,7 @@ const structuredData = {
   "@type": "ContactPage",
   name: "Contact AI Automation Agency",
   description: "Get in touch with our AI automation experts",
-  url: "https://my-portfolio-chi-lovat-69.vercel.app/contact",
+  url: "https://my-new-portfolio-gamma-two.vercel.app/contact",
   mainEntity: {
     "@type": "Organization",
     name: "Syed Rafay",
